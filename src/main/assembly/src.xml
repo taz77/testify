@@ -1,0 +1,110 @@
+<!--
+  ~ Copyright 2015 Codice Foundation
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<assembly
+        xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+      http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2
+      http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>testify-distribution</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${core.directory}</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>/lib</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <fileMode>0755</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${project.basedir}/src/main/resources/bin</directory>
+            <includes>
+                <include>**</include>
+            </includes>
+            <outputDirectory>/bin</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${project.basedir}/src/main/resources</directory>
+            <includes>
+                <include>*.xml</include>
+            </includes>
+            <outputDirectory>/etc</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${actions.directory}</directory>
+            <includes>
+                <include>**/*.jar</include>
+            </includes>
+            <outputDirectory>/bundles/actions</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${assertions.directory}</directory>
+            <includes>
+                <include>**/*.jar</include>
+            </includes>
+            <outputDirectory>/bundles/assertions</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${processors.directory}</directory>
+            <includes>
+                <include>**/*.jar</include>
+            </includes>
+            <outputDirectory>/bundles/processors</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${propertiesParsers.directory}</directory>
+            <includes>
+                <include>**/*.jar</include>
+            </includes>
+            <outputDirectory>/bundles/propertiesParsers</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${testParsers.directory}</directory>
+            <includes>
+                <include>**/*.jar</include>
+            </includes>
+            <outputDirectory>/bundles/testParsers</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
+            <directory>${writers.directory}</directory>
+            <includes>
+                <include>**/*.jar</include>
+            </includes>
+            <outputDirectory>/bundles/writers</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>

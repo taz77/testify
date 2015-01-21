@@ -1,0 +1,142 @@
+#!/bin/sh
+
+detectOS() {
+  # OS specific support (must be 'true' or 'false').
+  darwin=false;
+  linux=false;
+  case "`uname`" in
+    Darwin*)
+      darwin=true
+      ;;
+    Linux*)
+      linux=true
+      ;;
+    *)
+      echo -e "\n`uname` is not currently supported, attempting to run with settings for linux\n"
+      linux=true
+  esac
+}
+
+function checkTestDir()
+{
+    if [[ -z "$TEST_DIR" ]]; then
+    {
+        echo -e "\nTest Directory not specified, assuming current directory\n"
+        TEST_DIR=`pwd`
+    }
+    fi
+}
+
+function checkResultsDir()
+{
+    if [[ -z "$RESULT_DIR" ]]; then
+    {
+        echo -e "\nResults Directory not specified, results will be created in CurrentDirectory/testify\n"
+                RESULT_DIR=`pwd`/testify
+    }
+    fi
+}
+
+function checkConfigFile()
+{
+    if [[ -z "$CONFIG_FILE" ]]; then
+    {
+        echo -e "\nConfig File not specified, system will look for .properties files in the test directory\n"
+        CONFIG_FILE=${TEST_DIR}
+    }
+    fi
+}
+
+function checkLogLevel()
+{
+    if [[ -z "$LOG_LEVEL" ]]; then
+    {
+        echo -e "\nLog level not specified, system will set log level to INFO\n"
+        LOG_LEVEL="INFO"
+    }
+    fi
+}
+
+function init()
+{
+    # Initialize SCRIPT_DIR
+    SCRIPT_DIR=""
+    
+    # Set SCRIPT_DIR based on environment
+    if $linux; then
+    	SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+    elif $darwin; then
+    	#For Darwin, check for greadlink
+    	if type -p greadlink; then
+    		SCRIPT_DIR="$(dirname "$(greadlink -f "$0")")"
+    	else
+    		echo -e "\n greadlink is not available in the PATH\n\
+    			This is provided on OSX by coreutils\n\
+    			coreutils can be installed through homebrew by running\n\
+    			'brew install coreutils'\n\
+    			For more information on homebrew, see: http://brew.sh"
+    		echo -e "\nAttempting fallback method...\n"
+    	
+    		SCRIPT_DIR=$( cd "$( dirname "$0" )" && pwd )
+    	fi
+    fi
+    # Set TESTIFY_HOME based on SCRIPT_DIR
+    TESTIFY_HOME=$(dirname ${SCRIPT_DIR})
+
+    checkTestDir
+
+    checkResultsDir
+
+    checkConfigFile
+
+    checkLogLevel
+}
+
+function executeTest()
+{
+    java -jar ${TESTIFY_HOME}/lib/testify-core*.jar ${TEST_DIR} ${RESULT_DIR} ${CONFIG_FILE} ${LOG_LEVEL}
+}
+
+function main()
+{
+    detectOS
+
+    init
+
+    executeTest
+}
+
+function usage()
+{
+  echo -e "\nUsage: Executes Tests with the Dynamic Test Framework [[-t] [-r] [-c] [-h]]"
+  echo -e "\t-t | --testDir\tLocation of the test bundle (Defaults to current directory)"
+  echo -e "\t-r | --resultDir\tLocation of result output (Defaults to CurrentDirectory/testify)"
+  echo -e "\t-c | --config\tLocation of configuration file or configuration directory (Defaults to test directory)"
+  echo -e "\t-l | --log\Testify Logging level (Defaults to INFO)"
+  echo -e "\t-h | --help\tDisplays this message.\n"
+}
+
+while [ "$1" != "" ]; do
+  case $1 in
+    -t | --testDir )    shift
+                        TEST_DIR=$1
+                        ;;
+    -r | --resultDir)   shift
+                        RESULT_DIR=$1
+                        ;;
+    -c | --config)      shift
+                        CONFIG_FILE=$1
+                        ;;
+    -l | --log)         shift
+                        LOG_LEVEL=$1
+                        ;;
+    -h | --help )   usage
+            exit
+            ;;
+    * )         usage
+            exit 1
+  esac
+  shift
+done
+
+main

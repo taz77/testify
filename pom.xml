@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2015 Codice Foundation
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.codice.testify</groupId>
+        <artifactId>testify-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.codice.testify</groupId>
+    <artifactId>dynamic-test-framework</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Testify Distribution</name>
+
+    <scm>
+        <connection>scm:git:https://github.com/testify/testify.git</connection>
+        <developerConnection>scm:git:https://github.com/testify/testify.git</developerConnection>
+        <url>https://github.com/testify/testify.git</url>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.compiler.plugin>3.1</version.compiler.plugin>
+
+        <!-- maven-compiler-plugin -->
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+
+        <!-- temp directories for Testify -->
+        <core.directory>target/core</core.directory>
+        <actions.directory>target/bundles/actions</actions.directory>
+        <assertions.directory>target/bundles/assertions</assertions.directory>
+        <processors.directory>target/bundles/processors</processors.directory>
+        <propertiesParsers.directory>target/bundles/propertiesParsers</propertiesParsers.directory>
+        <testParsers.directory>target/bundles/testParsers</testParsers.directory>
+        <writers.directory>target/bundles/writers</writers.directory>
+
+        <!-- Core Version -->
+        <testify-core.version>0.0.1-SNAPSHOT</testify-core.version>
+
+        <!-- Actions -->
+        <addkeystore.version>0.0.1-SNAPSHOT</addkeystore.version>
+        <createtimestamp.version>0.0.1-SNAPSHOT</createtimestamp.version>
+        <storeresponseproperty.version>0.0.1-SNAPSHOT</storeresponseproperty.version>
+        <waitaction.version>0.0.1-SNAPSHOT</waitaction.version>
+
+        <!-- Assertions -->
+        <containsassertion.version>0.0.1-SNAPSHOT</containsassertion.version>
+        <invalidhttpstatuscodesassertion.version>0.0.1-SNAPSHOT</invalidhttpstatuscodesassertion.version>
+        <notcontainsassertion.version>0.0.1-SNAPSHOT</notcontainsassertion.version>
+        <notsoapfaultassertion.version>0.0.1-SNAPSHOT</notsoapfaultassertion.version>
+        <soapfaultassertion.version>0.0.1-SNAPSHOT</soapfaultassertion.version>
+        <validhttpstatuscodesassertion.version>0.0.1-SNAPSHOT</validhttpstatuscodesassertion.version>
+        <xpathassertion.version>0.0.1-SNAPSHOT</xpathassertion.version>
+
+        <!-- Processors -->
+        <jerseytestprocessor.version>0.0.1-SNAPSHOT</jerseytestprocessor.version>
+        <jschtestprocessor.version>0.0.1-SNAPSHOT</jschtestprocessor.version>
+        <jwsdltestprocessor.version>0.0.1-SNAPSHOT</jwsdltestprocessor.version>
+
+        <!-- Properties Parsers -->
+        <commapropertiesparser.version>0.0.1-SNAPSHOT</commapropertiesparser.version>
+
+        <!-- Test Parsers -->
+        <xmlscannertestparser.version>0.0.1-SNAPSHOT</xmlscannertestparser.version>
+        <directory-marker-parser.version>0.0.1-SNAPSHOT</directory-marker-parser.version>
+
+        <!-- Writers -->
+        <textfilewriter.version>0.0.1-SNAPSHOT</textfilewriter.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <executions>
+                    <execution>
+                        <id>store-core</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.codice.testify</groupId>
+                                    <artifactId>testify-core</artifactId>
+                                    <classifier>jar-with-dependencies</classifier>
+                                    <version>${testify-core.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${core.directory}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                            <stripVersion>true</stripVersion>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>grab-bundles</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <!-- ACTIONS -->
+                                <artifactItem>
+                                    <groupId>org.codice.testify.actions</groupId>
+                                    <artifactId>addkeystoreaction</artifactId>
+                                    <version>${addkeystore.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${actions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.actions</groupId>
+                                    <artifactId>createtimestampaction</artifactId>
+                                    <version>${createtimestamp.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${actions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.actions</groupId>
+                                    <artifactId>storeresponsepropertyaction</artifactId>
+                                    <version>${storeresponseproperty.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${actions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.actions</groupId>
+                                    <artifactId>waitaction</artifactId>
+                                    <version>${waitaction.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${actions.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <!-- ASSERTIONS -->
+                                <artifactItem>
+                                    <groupId>org.codice.testify.assertions</groupId>
+                                    <artifactId>containsassertion</artifactId>
+                                    <version>${containsassertion.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${assertions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.assertions</groupId>
+                                    <artifactId>invalidhttpstatuscodesassertion</artifactId>
+                                    <version>${invalidhttpstatuscodesassertion.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${assertions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.assertions</groupId>
+                                    <artifactId>notcontainsassertion</artifactId>
+                                    <version>${notcontainsassertion.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${assertions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.assertions</groupId>
+                                    <artifactId>notsoapfaultassertion</artifactId>
+                                    <version>${notsoapfaultassertion.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${assertions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.assertions</groupId>
+                                    <artifactId>soapfaultassertion</artifactId>
+                                    <version>${soapfaultassertion.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${assertions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.assertions</groupId>
+                                    <artifactId>validhttpstatuscodesassertion</artifactId>
+                                    <version>${validhttpstatuscodesassertion.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${assertions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.assertions</groupId>
+                                    <artifactId>xpathassertion</artifactId>
+                                    <version>${xpathassertion.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${assertions.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <!-- PROCESSORS -->
+                                <artifactItem>
+                                    <groupId>org.codice.testify.processors</groupId>
+                                    <artifactId>jerseytestprocessor</artifactId>
+                                    <version>${jerseytestprocessor.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${processors.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.processors</groupId>
+                                    <artifactId>jschtestprocessor</artifactId>
+                                    <version>${jschtestprocessor.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${processors.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.processors</groupId>
+                                    <artifactId>jwsdltestprocessor</artifactId>
+                                    <version>${jwsdltestprocessor.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${processors.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <!-- PROPERTIES PARSERS -->
+                                <artifactItem>
+                                    <groupId>org.codice.testify.propertiesparsers</groupId>
+                                    <artifactId>commapropertiesparser</artifactId>
+                                    <version>${commapropertiesparser.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${propertiesParsers.directory}</outputDirectory>
+                                </artifactItem>
+
+                                <!-- TEST PARSERS -->
+                                <artifactItem>
+                                    <groupId>org.codice.testify.testparsers</groupId>
+                                    <artifactId>xmlscannertestparser</artifactId>
+                                    <version>${xmlscannertestparser.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${testParsers.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.testparsers</groupId>
+                                    <artifactId>directory-marker-parser</artifactId>
+                                    <version>${directory-marker-parser.version}</version>
+                                    <type>jar</type>
+                                </artifactItem>
+
+                                <!-- WRITERS -->
+                                <artifactItem>
+                                    <groupId>org.codice.testify.writers</groupId>
+                                    <artifactId>textfilewriter</artifactId>
+                                    <version>${textfilewriter.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${writers.directory}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>package-framework</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/src.xml</descriptor>
+                            </descriptors>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.compiler.plugin}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
