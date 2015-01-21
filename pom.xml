@@ -81,7 +81,7 @@
 
         <!-- Test Parsers -->
         <xmlscannertestparser.version>0.0.1-SNAPSHOT</xmlscannertestparser.version>
-        <directory-marker-parser.version>0.0.1-SNAPSHOT</directory-marker-parser.version>
+        <directorymarkertestparser.version>0.0.1-SNAPSHOT</directorymarkertestparser.version>
 
         <!-- Writers -->
         <textfilewriter.version>0.0.1-SNAPSHOT</textfilewriter.version>
@@ -245,9 +245,10 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.testparsers</groupId>
-                                    <artifactId>directory-marker-parser</artifactId>
-                                    <version>${directory-marker-parser.version}</version>
+                                    <artifactId>directorymarkertestparser</artifactId>
+                                    <version>${directorymarkertestparser.version}</version>
                                     <type>jar</type>
+                                    <outputDirectory>${testParsers.directory}</outputDirectory>
                                 </artifactItem>
 
                                 <!-- WRITERS -->
