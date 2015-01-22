@@ -108,7 +108,7 @@ function main()
 
 function usage()
 {
-  echo -e "\nUsage: Executes Tests with the Dynamic Test Framework [[-t] [-r] [-c] [-h]]"
+  echo -e "\nUsage: Executes Tests with the Testify Framework [[-t] [-r] [-c] [-h]]"
   echo -e "\t-t | --testDir\tLocation of the test bundle (Defaults to current directory)"
   echo -e "\t-r | --resultDir\tLocation of result output (Defaults to CurrentDirectory/testify)"
   echo -e "\t-c | --config\tLocation of configuration file or configuration directory (Defaults to test directory)"

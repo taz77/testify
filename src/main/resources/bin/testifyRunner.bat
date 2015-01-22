@@ -78,7 +78,7 @@ GOTO :END
 
 :usage
 ECHO.
-ECHO Usage: Executes Tests with the Dynamic Test Framework [[-t] [-r] [-c] [-l] [-h]]
+ECHO Usage: Executes Tests with the Testify Framework [[-t] [-r] [-c] [-l] [-h]]
 ECHO -t OR --testDir     Location of the test bundle (Defaults to current directory)
 ECHO -r OR --resultDir   Location of result output (Defaults to CurrentDirectory/testify)
 ECHO -c OR --config      Location of configuration file or configuration directory (Defaults to test directory)
