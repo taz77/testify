@@ -25,7 +25,7 @@
     </parent>
 
     <groupId>org.codice.testify</groupId>
-    <artifactId>dynamic-test-framework</artifactId>
+    <artifactId>testify</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Testify Distribution</name>
