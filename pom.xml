@@ -24,7 +24,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.codice.testify</groupId>
     <artifactId>testify</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -228,7 +227,7 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.processors</groupId>
-                                    <artifactId>ldap-processor</artifactId>
+                                    <artifactId>ldapprocessor</artifactId>
                                     <version>${ldapprocessor.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${processors.directory}</outputDirectory>
