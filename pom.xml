@@ -21,11 +21,11 @@
     <parent>
         <groupId>org.codice.testify</groupId>
         <artifactId>testify-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>testify</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>pom</packaging>
     <name>Testify Distribution</name>
 
@@ -53,38 +53,38 @@
         <writers.directory>target/bundles/writers</writers.directory>
 
         <!-- Core Version -->
-        <testify-core.version>0.0.1-SNAPSHOT</testify-core.version>
+        <testify-core.version>0.0.1</testify-core.version>
 
         <!-- Actions -->
-        <addkeystore.version>0.0.1-SNAPSHOT</addkeystore.version>
-        <createtimestamp.version>0.0.1-SNAPSHOT</createtimestamp.version>
-        <storeresponseproperty.version>0.0.1-SNAPSHOT</storeresponseproperty.version>
-        <waitaction.version>0.0.1-SNAPSHOT</waitaction.version>
+        <addkeystore.version>0.0.1</addkeystore.version>
+        <createtimestamp.version>0.0.1</createtimestamp.version>
+        <storeresponseproperty.version>0.0.1</storeresponseproperty.version>
+        <waitaction.version>0.0.1</waitaction.version>
 
         <!-- Assertions -->
-        <containsassertion.version>0.0.1-SNAPSHOT</containsassertion.version>
-        <invalidhttpstatuscodesassertion.version>0.0.1-SNAPSHOT</invalidhttpstatuscodesassertion.version>
-        <notcontainsassertion.version>0.0.1-SNAPSHOT</notcontainsassertion.version>
-        <notsoapfaultassertion.version>0.0.1-SNAPSHOT</notsoapfaultassertion.version>
-        <soapfaultassertion.version>0.0.1-SNAPSHOT</soapfaultassertion.version>
-        <validhttpstatuscodesassertion.version>0.0.1-SNAPSHOT</validhttpstatuscodesassertion.version>
-        <xpathassertion.version>0.0.1-SNAPSHOT</xpathassertion.version>
+        <containsassertion.version>0.0.1</containsassertion.version>
+        <invalidhttpstatuscodesassertion.version>0.0.1</invalidhttpstatuscodesassertion.version>
+        <notcontainsassertion.version>0.0.1</notcontainsassertion.version>
+        <notsoapfaultassertion.version>0.0.1</notsoapfaultassertion.version>
+        <soapfaultassertion.version>0.0.1</soapfaultassertion.version>
+        <validhttpstatuscodesassertion.version>0.0.1</validhttpstatuscodesassertion.version>
+        <xpathassertion.version>0.0.1</xpathassertion.version>
 
         <!-- Processors -->
-        <jerseytestprocessor.version>0.0.1-SNAPSHOT</jerseytestprocessor.version>
-        <jschtestprocessor.version>0.0.1-SNAPSHOT</jschtestprocessor.version>
-        <jwsdltestprocessor.version>0.0.1-SNAPSHOT</jwsdltestprocessor.version>
-        <ldapprocessor.version>0.0.1-SNAPSHOT</ldapprocessor.version>
+        <jerseytestprocessor.version>0.0.1</jerseytestprocessor.version>
+        <jschtestprocessor.version>0.0.1</jschtestprocessor.version>
+        <jwsdltestprocessor.version>0.0.1</jwsdltestprocessor.version>
+        <ldapprocessor.version>0.0.1</ldapprocessor.version>
 
         <!-- Properties Parsers -->
-        <commapropertiesparser.version>0.0.1-SNAPSHOT</commapropertiesparser.version>
+        <commapropertiesparser.version>0.0.1</commapropertiesparser.version>
 
         <!-- Test Parsers -->
-        <xmlscannertestparser.version>0.0.1-SNAPSHOT</xmlscannertestparser.version>
-        <directorymarkertestparser.version>0.0.1-SNAPSHOT</directorymarkertestparser.version>
+        <xmlscannertestparser.version>0.0.1</xmlscannertestparser.version>
+        <directorymarkertestparser.version>0.0.1</directorymarkertestparser.version>
 
         <!-- Writers -->
-        <textfilewriter.version>0.0.1-SNAPSHOT</textfilewriter.version>
+        <textfilewriter.version>0.0.1</textfilewriter.version>
     </properties>
 
     <build>
