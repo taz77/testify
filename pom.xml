@@ -57,35 +57,35 @@
         <testify-core.version>0.0.1</testify-core.version>
 
         <!-- Actions -->
-        <addkeystore.version>0.0.1</addkeystore.version>
-        <createtimestamp.version>0.0.1</createtimestamp.version>
-        <storeresponseproperty.version>0.0.1</storeresponseproperty.version>
-        <waitaction.version>0.0.1</waitaction.version>
+        <addkeystore.version>0.0.2-SNAPSHOT</addkeystore.version>
+        <createtimestamp.version>0.0.2-SNAPSHOT</createtimestamp.version>
+        <storeresponseproperty.version>0.0.2-SNAPSHOT</storeresponseproperty.version>
+        <waitaction.version>0.0.2-SNAPSHOT</waitaction.version>
 
         <!-- Assertions -->
-        <containsassertion.version>0.0.1</containsassertion.version>
-        <invalidhttpstatuscodesassertion.version>0.0.1</invalidhttpstatuscodesassertion.version>
-        <notcontainsassertion.version>0.0.1</notcontainsassertion.version>
-        <notsoapfaultassertion.version>0.0.1</notsoapfaultassertion.version>
-        <soapfaultassertion.version>0.0.1</soapfaultassertion.version>
-        <validhttpstatuscodesassertion.version>0.0.1</validhttpstatuscodesassertion.version>
-        <xpathassertion.version>0.0.1</xpathassertion.version>
+        <containsassertion.version>0.0.2-SNAPSHOT</containsassertion.version>
+        <invalidhttpstatuscodesassertion.version>0.0.2-SNAPSHOT</invalidhttpstatuscodesassertion.version>
+        <notcontainsassertion.version>0.0.2-SNAPSHOT</notcontainsassertion.version>
+        <notsoapfaultassertion.version>0.0.2-SNAPSHOT</notsoapfaultassertion.version>
+        <soapfaultassertion.version>0.0.2-SNAPSHOT</soapfaultassertion.version>
+        <validhttpstatuscodesassertion.version>0.0.2-SNAPSHOT</validhttpstatuscodesassertion.version>
+        <xpathassertion.version>0.0.2-SNAPSHOT</xpathassertion.version>
 
         <!-- Processors -->
-        <jerseytestprocessor.version>0.0.1</jerseytestprocessor.version>
-        <jschtestprocessor.version>0.0.1</jschtestprocessor.version>
-        <jwsdltestprocessor.version>0.0.1</jwsdltestprocessor.version>
-        <ldaptestprocessor.version>0.0.1</ldaptestprocessor.version>
+        <jerseytestprocessor.version>0.0.2-SNAPSHOT</jerseytestprocessor.version>
+        <jschtestprocessor.version>0.0.2-SNAPSHOT</jschtestprocessor.version>
+        <jwsdltestprocessor.version>0.0.2-SNAPSHOT</jwsdltestprocessor.version>
+        <ldaptestprocessor.version>0.0.2-SNAPSHOT</ldaptestprocessor.version>
 
         <!-- Properties Parsers -->
-        <commapropertiesparser.version>0.0.1</commapropertiesparser.version>
+        <commapropertiesparser.version>0.0.2-SNAPSHOT</commapropertiesparser.version>
 
         <!-- Test Parsers -->
-        <xmlscannertestparser.version>0.0.1</xmlscannertestparser.version>
-        <directorymarkertestparser.version>0.0.1</directorymarkertestparser.version>
+        <xmlscannertestparser.version>0.0.2-SNAPSHOT</xmlscannertestparser.version>
+        <directorymarkertestparser.version>0.0.2-SNAPSHOT</directorymarkertestparser.version>
 
         <!-- Writers -->
-        <textfilewriter.version>0.0.1</textfilewriter.version>
+        <textfilewriter.version>0.0.2-SNAPSHOT</textfilewriter.version>
     </properties>
 
     <build>
