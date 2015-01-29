@@ -75,7 +75,7 @@
         <jerseytestprocessor.version>0.0.1</jerseytestprocessor.version>
         <jschtestprocessor.version>0.0.1</jschtestprocessor.version>
         <jwsdltestprocessor.version>0.0.1</jwsdltestprocessor.version>
-        <ldapprocessor.version>0.0.1</ldapprocessor.version>
+        <ldaptestprocessor.version>0.0.1</ldaptestprocessor.version>
 
         <!-- Properties Parsers -->
         <commapropertiesparser.version>0.0.1</commapropertiesparser.version>
@@ -228,8 +228,8 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.processors</groupId>
-                                    <artifactId>ldapprocessor</artifactId>
-                                    <version>${ldapprocessor.version}</version>
+                                    <artifactId>ldaptestprocessor</artifactId>
+                                    <version>${ldaptestprocessor.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${processors.directory}</outputDirectory>
                                 </artifactItem>
