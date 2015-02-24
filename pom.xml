@@ -159,12 +159,14 @@
                                     <artifactId>generateuuidaction</artifactId>
                                     <version>${generateuuidaction.version}</version>
                                     <type>jar</type>
+                                    <outputDirectory>${actions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.actions</groupId>
                                     <artifactId>generatenonceaction</artifactId>
                                     <version>${generatenonceaction.version}</version>
                                     <type>jar</type>
+                                    <outputDirectory>${actions.directory}</outputDirectory>
                                 </artifactItem>
 
                                 <!-- ASSERTIONS -->
