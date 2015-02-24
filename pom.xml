@@ -61,6 +61,8 @@
         <createtimestamp.version>0.0.2-SNAPSHOT</createtimestamp.version>
         <storeresponseproperty.version>0.0.2-SNAPSHOT</storeresponseproperty.version>
         <waitaction.version>0.0.2-SNAPSHOT</waitaction.version>
+        <generateuuidaction.version>0.0.1-SNAPSHOT</generateuuidaction.version>
+        <generatenonceaction.version>0.0.1-SNAPSHOT</generatenonceaction.version>
 
         <!-- Assertions -->
         <containsassertion.version>0.0.2-SNAPSHOT</containsassertion.version>
@@ -151,6 +153,18 @@
                                     <version>${waitaction.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${actions.directory}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.actions</groupId>
+                                    <artifactId>generateuuidaction</artifactId>
+                                    <version>${generateuuidaction.version}</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.codice.testify.actions</groupId>
+                                    <artifactId>generatenonceaction</artifactId>
+                                    <version>${generatenonceaction.version}</version>
+                                    <type>jar</type>
                                 </artifactItem>
 
                                 <!-- ASSERTIONS -->
