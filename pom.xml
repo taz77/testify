@@ -57,37 +57,19 @@
         <testify-core.version>0.0.2</testify-core.version>
 
         <!-- Actions -->
-        <addkeystore.version>0.0.1</addkeystore.version>
-        <createtimestamp.version>0.0.1</createtimestamp.version>
-        <storeresponseproperty.version>0.0.2</storeresponseproperty.version>
-        <waitaction.version>0.0.1</waitaction.version>
-        <generateuuidaction.version>0.0.1</generateuuidaction.version>
-        <generatenonceaction.version>0.0.1</generatenonceaction.version>
+        <testify.actions.version>0.0.3-SNAPSHOT</testify.actions.version>
 
         <!-- Assertions -->
-        <containsassertion.version>0.0.1</containsassertion.version>
-        <invalidhttpstatuscodesassertion.version>0.0.1</invalidhttpstatuscodesassertion.version>
-        <notcontainsassertion.version>0.0.1</notcontainsassertion.version>
-        <notsoapfaultassertion.version>0.0.1</notsoapfaultassertion.version>
-        <soapfaultassertion.version>0.0.1</soapfaultassertion.version>
-        <validhttpstatuscodesassertion.version>0.0.1</validhttpstatuscodesassertion.version>
-        <xpathassertion.version>0.0.1</xpathassertion.version>
+        <testify.assertions.version>0.0.2-SNAPSHOT</testify.assertions.version>
 
         <!-- Processors -->
-        <jerseytestprocessor.version>0.0.2</jerseytestprocessor.version>
-        <jschtestprocessor.version>0.0.1</jschtestprocessor.version>
-        <jwsdltestprocessor.version>0.0.1</jwsdltestprocessor.version>
-        <ldaptestprocessor.version>0.0.1</ldaptestprocessor.version>
+        <testify.processors.version>0.0.3-SNAPSHOT</testify.processors.version>
 
-        <!-- Properties Parsers -->
-        <commapropertiesparser.version>0.0.1</commapropertiesparser.version>
-
-        <!-- Test Parsers -->
-        <xmlscannertestparser.version>0.0.1</xmlscannertestparser.version>
-        <directorymarkertestparser.version>0.0.1</directorymarkertestparser.version>
+        <!-- Parsers -->
+        <testify.parsers.version>0.0.2-SNAPSHOT</testify.parsers.version>
 
         <!-- Writers -->
-        <textfilewriter.version>0.0.1</textfilewriter.version>
+        <testify.writers.version>0.0.2-SNAPSHOT</testify.writers.version>
     </properties>
 
     <build>
@@ -129,42 +111,42 @@
                                 <artifactItem>
                                     <groupId>org.codice.testify.actions</groupId>
                                     <artifactId>addkeystoreaction</artifactId>
-                                    <version>${addkeystore.version}</version>
+                                    <version>${testify.actions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${actions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.actions</groupId>
                                     <artifactId>createtimestampaction</artifactId>
-                                    <version>${createtimestamp.version}</version>
+                                    <version>${testify.actions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${actions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.actions</groupId>
                                     <artifactId>storeresponsepropertyaction</artifactId>
-                                    <version>${storeresponseproperty.version}</version>
+                                    <version>${testify.actions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${actions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.actions</groupId>
                                     <artifactId>waitaction</artifactId>
-                                    <version>${waitaction.version}</version>
+                                    <version>${testify.actions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${actions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.actions</groupId>
                                     <artifactId>generateuuidaction</artifactId>
-                                    <version>${generateuuidaction.version}</version>
+                                    <version>${testify.actions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${actions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.actions</groupId>
                                     <artifactId>generatenonceaction</artifactId>
-                                    <version>${generatenonceaction.version}</version>
+                                    <version>${testify.actions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${actions.directory}</outputDirectory>
                                 </artifactItem>
@@ -173,49 +155,49 @@
                                 <artifactItem>
                                     <groupId>org.codice.testify.assertions</groupId>
                                     <artifactId>containsassertion</artifactId>
-                                    <version>${containsassertion.version}</version>
+                                    <version>${testify.assertions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${assertions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.assertions</groupId>
                                     <artifactId>invalidhttpstatuscodesassertion</artifactId>
-                                    <version>${invalidhttpstatuscodesassertion.version}</version>
+                                    <version>${testify.assertions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${assertions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.assertions</groupId>
                                     <artifactId>notcontainsassertion</artifactId>
-                                    <version>${notcontainsassertion.version}</version>
+                                    <version>${testify.assertions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${assertions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.assertions</groupId>
                                     <artifactId>notsoapfaultassertion</artifactId>
-                                    <version>${notsoapfaultassertion.version}</version>
+                                    <version>${testify.assertions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${assertions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.assertions</groupId>
                                     <artifactId>soapfaultassertion</artifactId>
-                                    <version>${soapfaultassertion.version}</version>
+                                    <version>${testify.assertions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${assertions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.assertions</groupId>
                                     <artifactId>validhttpstatuscodesassertion</artifactId>
-                                    <version>${validhttpstatuscodesassertion.version}</version>
+                                    <version>${testify.assertions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${assertions.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.assertions</groupId>
                                     <artifactId>xpathassertion</artifactId>
-                                    <version>${xpathassertion.version}</version>
+                                    <version>${testify.assertions.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${assertions.directory}</outputDirectory>
                                 </artifactItem>
@@ -224,28 +206,28 @@
                                 <artifactItem>
                                     <groupId>org.codice.testify.processors</groupId>
                                     <artifactId>jerseytestprocessor</artifactId>
-                                    <version>${jerseytestprocessor.version}</version>
+                                    <version>${testify.processors.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${processors.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.processors</groupId>
                                     <artifactId>jschtestprocessor</artifactId>
-                                    <version>${jschtestprocessor.version}</version>
+                                    <version>${testify.processors.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${processors.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.processors</groupId>
                                     <artifactId>jwsdltestprocessor</artifactId>
-                                    <version>${jwsdltestprocessor.version}</version>
+                                    <version>${testify.processors.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${processors.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.processors</groupId>
                                     <artifactId>ldaptestprocessor</artifactId>
-                                    <version>${ldaptestprocessor.version}</version>
+                                    <version>${testify.processors.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${processors.directory}</outputDirectory>
                                 </artifactItem>
@@ -254,7 +236,7 @@
                                 <artifactItem>
                                     <groupId>org.codice.testify.propertiesparsers</groupId>
                                     <artifactId>commapropertiesparser</artifactId>
-                                    <version>${commapropertiesparser.version}</version>
+                                    <version>${testify.parsers.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${propertiesParsers.directory}</outputDirectory>
                                 </artifactItem>
@@ -263,14 +245,14 @@
                                 <artifactItem>
                                     <groupId>org.codice.testify.testparsers</groupId>
                                     <artifactId>xmlscannertestparser</artifactId>
-                                    <version>${xmlscannertestparser.version}</version>
+                                    <version>${testify.parsers.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${testParsers.directory}</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.codice.testify.testparsers</groupId>
                                     <artifactId>directorymarkertestparser</artifactId>
-                                    <version>${directorymarkertestparser.version}</version>
+                                    <version>${testify.parsers.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${testParsers.directory}</outputDirectory>
                                 </artifactItem>
@@ -279,7 +261,7 @@
                                 <artifactItem>
                                     <groupId>org.codice.testify.writers</groupId>
                                     <artifactId>textfilewriter</artifactId>
-                                    <version>${textfilewriter.version}</version>
+                                    <version>${testify.writers.version}</version>
                                     <type>jar</type>
                                     <outputDirectory>${writers.directory}</outputDirectory>
                                 </artifactItem>
